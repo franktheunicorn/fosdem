@@ -21,3 +21,5 @@ class Foo {
         return 42;
     }
 }
+
+echo 1;
