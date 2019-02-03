@@ -1,0 +1,34 @@
+from setuptools import find_packages, setup
+
+VERSION = '0.0.1'
+
+setup(
+    name='sparklingml',
+    version=VERSION,
+    author='Holden Karau',
+    author_email='holden@pigscanfly.ca',
+    # Copy the shell script into somewhere likely to be in the users path
+    packages=find_packages(),
+    include_package_data=True,
+    package_data={
+        'sparklingml': ['jar/sparklingml.jar']
+    },
+    url='https://github.com/sparklingpandas/sparklingml',
+    license='LICENSE',
+    description='Add additional ML algorithms to Spark',
+    long_description=open('README.md').read(),
+    install_requires=[
+        'pyspark>=2.3.0',
+        'nltk',
+        'numpy',  # Requires for PySpark ML
+        'pandas',
+        'spacy',
+        'future',
+        'pyarrow',
+    ],
+    test_requires=[
+        'nose==1.3.7',
+        'coverage>3.7.0',
+        'unittest2>=1.0.0',
+    ],
+)
